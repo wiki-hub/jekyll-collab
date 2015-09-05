@@ -1,17 +1,5 @@
 name: Wikihub Jekyll Collaborative Example
 baseurl: '/jekyll-collab'
-
 owner: wiki-hub
 repo: jekyll-collab
 branch: gh-pages
-
-sass:
-  sass_dir: /assets/_sass
-  style: :compressed
-defaults:
-  -
-    scope:
-      path: ''
-      type: posts
-    values:
-      layout: post

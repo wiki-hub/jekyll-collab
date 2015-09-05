@@ -1,7 +1,3 @@
----
----
-{% include_relative _js/wikihub.min.js %}
-
 (function() {
   var opts = {
     owner:  '{{ site.owner  }}',
@@ -45,7 +41,6 @@
 
     errorSection.innerHTML = message;
     show(errorSection);
-    console.log(err);
   }
 
   window.suggest = function(path) {
@@ -79,8 +74,6 @@
     opts.message = messageElem.value;
     opts.title = opts.message;
 
-    console.log(opts);
-
     wikihub.save(opts)
       .then(function(pull) {
         hideAll();
@@ -90,5 +83,4 @@
       })
       .catch(displayError);
   }
-
 })();
