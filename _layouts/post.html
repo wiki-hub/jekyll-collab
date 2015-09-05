@@ -2,11 +2,10 @@
 layout: default
 ---
 <article>
-  <h1>{{ page.title }}</h1>
-  <time>{{ page.date | date: '%d %B'}}</time>
-  <span>{{ page.author }}</span>
-
   <section id='show-section'>
+    <h1>{{ page.title }}</h1>
+    <time>{{ page.date | date: '%d %B'}}</time>
+    <span>{{ page.author }}</span>
     {{ content }}
     <button onclick='suggest("{{ page.path }}")' id='suggest-button'>Suggest Changes</button>
   </section>
