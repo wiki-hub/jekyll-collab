@@ -19,6 +19,7 @@
   var tokenElem   = document.getElementsByName('token')[0];
   var textElem    = document.getElementsByName('text')[0];
   var messageElem = document.getElementsByName('message')[0];
+  var pullLink    = document.getElementById('pull-link');
 
   function show(elem) { elem.className = elem.className.replace('hide', ''); }
   function hideAll() { sections.forEach(hide); }
@@ -44,6 +45,7 @@
 
     errorSection.innerHTML = message;
     show(errorSection);
+    console.log(err);
   }
 
   window.suggest = function(path) {
@@ -75,10 +77,14 @@
   window.save = function() {
     opts.text = textElem.value;
     opts.message = messageElem.value;
+    opts.title = opts.message;
+
+    console.log(opts);
 
     wikihub.save(opts)
-      .then(function() {
+      .then(function(pull) {
         hideAll();
+        pullLink.setAttribute('href', pull.html_url);
         show(successSection);
         show(showSection);
       })
