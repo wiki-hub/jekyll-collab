@@ -1,8 +1,8 @@
-name: Wikihub Jekyll
-baseurl: '/wikihub'
+name: Wikihub Jekyll Collaborative Example
+baseurl: '/jekyll-collab'
 
-owner: mushishi78
-repo: wikihub
+owner: wiki-hub
+repo: jekyll-collab
 branch: gh-pages
 
 sass:
